@@ -1,0 +1,18 @@
+name: 'Extract package version'
+description: 'Extract version from package.json'
+inputs:
+  path:
+    required: false
+    default: '.'
+    description: 'Path to a folder that contains package.json file'
+outputs:
+  package-version:
+    description: 'Package version from package.json file'
+
+runs:
+  using: "composite"
+  steps:
+    - run: $GITHUB_ACTION_PATH//script.sh
+      shell: bash
+      env:
+        PATH_INPUT: ${{ inputs.path }}
