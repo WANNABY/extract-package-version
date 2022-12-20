@@ -14,3 +14,5 @@ runs:
   steps:
     - run: $GITHUB_ACTION_PATH//script.sh
       shell: bash
+      env:
+        PATH_INPUT: ${{ inputs.path }}

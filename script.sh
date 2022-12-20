@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "Trying to read ${INPUT_PATH}/package.json"
-PACKAGE_VERSION=$(cat ${INPUT_PATH}/package.json | jq '.version' | tr -d '"')
+echo "Trying to read ${PATH_INPUT}/package.json"
+PACKAGE_VERSION=$(cat ${PATH_INPUT}/package.json | jq '.version' | tr -d '"')
 
-echo "Found version: ${INPUT_PATH}"
+echo "Found version: ${PATH_INPUT}"
 
-echo "package-version=${INPUT_PATH}" >> $GITHUB_OUTPUT
+echo "package-version=${PATH_INPUT}" >> $GITHUB_OUTPUT
